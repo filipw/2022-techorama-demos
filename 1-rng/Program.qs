@@ -10,11 +10,8 @@
 
     @EntryPoint()
     operation Start() : Unit {
-        let random = RandomNumberGenerator();
-        Message($"Random uint16: {random}");
-    }
 
-    operation RandomNumberGenerator() : Int {
+        // allocate qubits
         use qubits = Qubit[16];
 
         // create superposition
@@ -25,6 +22,6 @@
 
         // convert to integer
         let randomNumber = ResultArrayAsInt(results);
-        return randomNumber;
-    }  
+        Message($"Random uint16: {randomNumber}");
+    }
 }

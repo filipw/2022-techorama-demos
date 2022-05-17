@@ -10,13 +10,17 @@
 
     @EntryPoint()
     operation Start() : Result[] {
-        return RandomNumberGenerator();
-    }
 
-    operation RandomNumberGenerator() : Result[] {
+        // allocate qubits
         use qubits = Qubit[4];
+
+        // create superposition
         ApplyToEach(H, qubits);
+
+        // measure qubits
         let results = MultiM(qubits);
+
+        // return bits
         return results;
-    }  
+    }
 }
