@@ -31,7 +31,7 @@ az quantum execute --target-id ionq.simulator -o table
 ## submit job
 
 ```
-az quantum job submit --target-id ionq.qpu --shots 10 -o table
+az quantum job submit --target-id ionq.qpu --shots 30 -o table
 ```
 
 ## show job status
